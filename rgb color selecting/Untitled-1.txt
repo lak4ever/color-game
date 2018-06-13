@@ -1,0 +1,93 @@
+console.log("connected");
+/*
+   setting up to give each squres a different color;
+   end of this it give randamise color to each squre but for now we move aside the radamize part
+    and add one single color to each squre
+
+
+*/
+//1.making list of colors
+var colors = [
+    "rgb(255,0,0)",
+    "rgb(255,255,0)",
+    "rgb(0,255,0)",
+    "rgb(0,255,255)",
+    "rgb(0,0,255)",
+    "rgb(255,0,255)",
+];
+
+//2. selec all 6 squares and loop throuhg to get colors
+
+var squares = document.querySelectorAll(".square");
+for (var i = 0; i < squares.length; i++) {
+      //adding inital colors
+        squares[i].style.background = colors[i];
+      // 4.adding the logic to the event click lisnters
+      squares[i].addEventListener("click",function () {
+    //5.grap the color of picked square
+          var clickedColor = (this.style.background);
+       //6. compare them with the picked color
+        
+          if (clickedColor === pickedColor) {
+            alert("you picked the right color");
+          } else {
+            alert("try again");
+          }
+       
+     });
+
+      
+
+
+ }
+/* we done in here is looping throught squres object and equal them to collor array so squre objec = 0
+ will get asign the colors array 0 index
+ at the end colors will add to squares a sequence that array slots filled */
+
+ /*3. generate three differnt numbrs using three defferenct chaneels 0 - 255 
+        and combied them with rgb and inside the quotes like a string
+        randamise part we deal with later
+*/
+var pickedColor = colors[3];
+var colorDisplay = document.querySelector("#colorDisplay");
+colorDisplay.textContent = pickedColor;
+
+/*
+    we have creat a varibale color display and selected it and upadate it to the equals to the picked color
+ */
+
+ // 4.adding the logic to the click event we use the same loop
+
+
+function generateRandomColors(num) {
+    //make and array
+    var arr = [];
+    //add num random colors to array
+    for (var i = 0; i < arr.length; i++) {
+        //get random color and push into array
+        arr.push(randomColor())
+    }
+    //return that array
+    return arr;
+
+    function randomColor(params) {
+    // pick a "red" from 0-255
+   var r =  Math.floor(Math.random() * 256);
+    // pick a "green" from 0-255
+    var g = Math.floor(Math.random() * 256); 
+    // pick a "blue" from 0-255
+    var b = Math.floor(Math.random() * 256); 
+    "rgb(" + r + "," + g + "," + b + ")";
+}
+
+
+function pickColor(params) {
+    //pick the random nuumber in js we use math it is a long long decimal
+    //we use math . floo to chop of the decimal numbers
+    
+    var random = Math.floor(Math.random() * colors.length);
+    return colors[random];
+
+    //"M" Math should be capital and its floo not float
+
+}

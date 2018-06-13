@@ -1,0 +1,95 @@
+body{
+    background-color: #232323;
+    margin: 0;
+    font-family: "Montserrat";
+    
+}
+
+.square{
+    width: 30%;
+    background: purple;
+    /*reasn we add space beacuse we cant see anything with out inside of it*/
+    padding-bottom: 30%;
+    /* up to this out put will be align in columns but we want rows*/
+    float: left;
+    /*when we using float we omit browser added space check image grid port falio
+    if nothing else with in images tags it automatically add 1px space via from browaser*/
+    margin:1.66%;
+/*
+    each one of the squares inside the container
+    each will take 30% of the containers, container goes around the squears not in the middle
+    30% is the magin number if you want 3 elment in row
+    margin 1.6% from all sides
+
+*/
+    border-radius: 10%; 
+    transition: background 1.0s;
+    --webkit-transition: background 1.0s;
+    --moz-transition: background 1.0s;
+}
+
+#container{
+    margin: 20px auto;
+    /* 0 maringin top and bottom of the container
+        and auto of the left and right makes center the container */
+    max-width: 600px;
+
+}
+
+h1{
+    text-align: center;
+	line-height: 1.1;
+	color: white;
+	background-color: steelblue;
+	margin: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding: 20px 0px;
+
+}
+
+
+#stripe{
+    background: white;
+    text-align: center;
+    height: 30px;
+    color: black;
+
+}
+
+.selected{
+    color: white;
+    background: steelblue;
+}
+
+#colorDisplay{
+    font-size: 200%;
+
+}
+
+button{
+        text-transform: uppercase;
+        border: none;
+        background: none;
+        height: 100%;/*blue color sudu patiyee usatama ganaa widiyta*/
+        font-weight: 700;
+        color: steelblue;
+        letter-spacing: 1px;
+        font-size: inherit;
+        transition: all 0.3s;/*first argive metn what we want to trasistion and second one how long we need to do that
+        in here all buttons need triansi with 2 seoconds*/
+        --webkit-transition: all 0.3s;
+        --moz-transition: all 0.3s;
+        outline: none;
+}
+
+#msg{
+    display: inline-block;
+    width: 20%;
+}
+
+button:hover{
+    color: white;
+    background-color: steelblue;
+
+}
